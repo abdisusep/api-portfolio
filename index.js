@@ -6,6 +6,10 @@ app.get('/', (req, res) => {
   res.send('API Portfolio')
 })
 
+app.get('/test', (req, res) => {
+  res.send('Test Route')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
