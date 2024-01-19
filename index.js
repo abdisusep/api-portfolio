@@ -3,11 +3,11 @@ const app = express()
 const port = 4000
 
 app.get('/', (req, res) => {
-  res.send('API Portfolio')
+  res.status(200).json({ message: 'Express on Vercel' });
 })
 
 app.get('/test', (req, res) => {
-  res.send('Test Route')
+   res.status(200).json({ message: 'Test' });
 })
 
 app.listen(port, () => {
