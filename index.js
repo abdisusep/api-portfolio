@@ -3,7 +3,9 @@ const app = express()
 const port = 4000
 
 app.get('/', (req, res) => {
-  res.status(200).json({ message: 'Express on Vercel' });
+  res.status(200).json({ 
+    name: 'Susep Sp'
+  });
 })
 
 app.get('/test', (req, res) => {
