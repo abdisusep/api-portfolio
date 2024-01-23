@@ -4,7 +4,8 @@ const port = 4000
 
 app.get('/', (req, res) => {
   res.status(200).json({ 
-    name: 'Susep Sp'
+    name: 'Susep Sp',
+    node_version: require('express/package').version
   });
 })
 
