@@ -14,3 +14,69 @@ model Services {
   image       String
   active      Boolean @default(false)
 }
+
+model Tools {
+  id          Int @id @default(autoincrement())
+  name        String
+  image       String
+  active      Boolean @default(false)
+}
+
+model Socials {
+  id          Int @id @default(autoincrement())
+  name        String
+  url         String
+  image       String
+  active      Boolean @default(false)
+}
+
+model Skills {
+  id          Int @id @default(autoincrement())
+  name        String
+  image       String
+  active      Boolean @default(false)
+
+  project_skills Project_skills[]
+}
+
+model Categories {
+  id          Int @id @default(autoincrement())
+  name        String
+  image       String
+  active      Boolean @default(false)
+
+  projects Projects[]
+}
+
+model Project_images {
+  id          Int @id @default(autoincrement())
+  project     Projects @relation(fields: [projectId], references: [id])
+  projectId   Int
+  image       String
+  order       Int
+  active      Boolean @default(false)
+}
+
+model Project_skills {
+  id          Int @id @default(autoincrement())
+  project     Projects @relation(fields: [projectId], references: [id])
+  projectId   Int
+  skill       Skills @relation(fields: [skillId], references: [id])
+  skillId     Int
+}
+
+model Projects {
+  id          Int @id @default(autoincrement())
+  category    Categories @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  slug        String
+  title       String
+  description String
+  url         String
+  github      String
+  year        String
+  active      Boolean @default(false)
+
+  project_images Project_images[]
+  project_skills Project_skills[]
+}
