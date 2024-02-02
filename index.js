@@ -1,18 +1,20 @@
-const express = require('express')
-const app = express()
-const port = 4000
+require('dotenv').config();
+
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 4000;
+
+const mainRoutes = require('./routes');
+
+app.use('/api', mainRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).json({ 
-    name: 'Susep Sp',
+    name: process.env.BASE_URL,
     node_version: process.version
   });
 })
 
-app.get('/test', (req, res) => {
-   res.status(200).json({ message: 'Test' });
-})
-
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
 })
