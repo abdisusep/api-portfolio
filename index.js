@@ -5,6 +5,9 @@ const app = express();
 const port = process.env.PORT || 4000;
 const prisma = require('./db/prisma');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const mainRoutes = require('./routes');
 
 app.use('/api', mainRoutes);
