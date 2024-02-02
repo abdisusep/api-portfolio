@@ -1,10 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-router.get('/services', (req, res) => {
-	res.status(200).json({ 
-		message: 'Services' 
-	});
-});
+const serviceController = require('../controllers/service.controller');
+
+router.get('/services', serviceController.getServices);
 
 module.exports = router;

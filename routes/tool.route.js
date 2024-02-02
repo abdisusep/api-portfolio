@@ -1,10 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-router.get('/tools', (req, res) => {
-	res.status(200).json({ 
-		message: 'Tools' 
-	});
-});
+const toolController = require('../controllers/tool.controller');
+
+router.get('/tools', toolController.getTools);
 
 module.exports = router;

@@ -1,10 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-router.get('/socials', (req, res) => {
-	res.status(200).json({ 
-		message: 'Social Media' 
-	});
-});
+const socialController = require('../controllers/social.controller');
+
+router.get('/socials', socialController.getSocials);
 
 module.exports = router;
