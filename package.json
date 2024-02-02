@@ -1,12 +1,12 @@
 {
-  "name": "test-express",
+  "name": "api-portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Susep Dev",
+  "author": "Susep Sp",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.1",
