@@ -1,8 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-const toolController = require('../controllers/tool.controller');
+const controller = require('../controllers/tool.controller');
 
-router.get('/tools', toolController.getTools);
+router.get('/tools', controller.getTools);
 
 module.exports = router;
