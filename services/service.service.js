@@ -1,8 +1,10 @@
+const prisma = require('../db/prisma');
+
 const getServices = async () => {
 	try {
-		const services = 1;
+		const services = await prisma.user.findMany();
 
-        if (services === 0) {
+        if (services.length === 0) {
             return {
                 status: 'error',
                 code: 404,
