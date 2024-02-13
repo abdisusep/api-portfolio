@@ -1,12 +1,12 @@
 const express = require('express');
 const router  = express.Router();
 
-// const serviceRoute = require('./service');
+const serviceRoute = require('./service');
 // const toolRoutes = require('./tool.route');
 // const socialRoutes = require('./social.route');
 // const skillRoutes = require('./skill.route');
 
-// router.use('/', serviceRoute);
+router.use('/', serviceRoute);
 // router.use('/', toolRoutes);
 // router.use('/', socialRoutes);
 // router.use('/', skillRoutes);
