@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "@prisma/client"
 }
 
 datasource db {
@@ -12,14 +13,14 @@ model Services {
   name        String
   description String
   image       String
-  active      Boolean @default(false)
+  active      Int @default(0)
 }
 
 model Tools {
   id          Int @id @default(autoincrement())
   name        String
   image       String
-  active      Boolean @default(false)
+  active      Int @default(0)
 }
 
 model Socials {
@@ -27,14 +28,14 @@ model Socials {
   name        String
   url         String
   image       String
-  active      Boolean @default(false)
+  active      Int @default(0)
 }
 
 model Skills {
   id          Int @id @default(autoincrement())
   name        String
   image       String
-  active      Boolean @default(false)
+  active      Int @default(0)
 
   project_skills Project_skills[]
 }
@@ -43,7 +44,7 @@ model Categories {
   id          Int @id @default(autoincrement())
   name        String
   image       String
-  active      Boolean @default(false)
+  active      Int @default(0)
 
   projects Projects[]
 }
@@ -54,7 +55,7 @@ model Project_images {
   projectId   Int
   image       String
   order       Int
-  active      Boolean @default(false)
+  active      Int @default(0)
 }
 
 model Project_skills {
@@ -75,7 +76,7 @@ model Projects {
   url         String
   github      String
   year        String
-  active      Boolean @default(false)
+  active      Int @default(0)
 
   project_images Project_images[]
   project_skills Project_skills[]
