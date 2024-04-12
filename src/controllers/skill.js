@@ -22,6 +22,7 @@ const getSkillById = async (req, res) => {
 const createSkill = async (req, res) => {
 	try {
       const newSkill = req.body;
+	  newSkill.active = parseInt(req.body.active);
       const createdSkill = await skillService.createSkill(newSkill);
       res.status(201).json(createdSkill);
     } catch (err) {
@@ -33,6 +34,7 @@ const updateSkill = async (req, res) => {
 	try {
 		const id = req.params.id;
       	const editSkill = req.body;
+		editSkill.active = parseInt(req.body.active);
       	const updatedSkill = await skillService.updateSkill(editSkill, parseInt(id));
       	res.status(200).json(updatedSkill);
     } catch (err) {

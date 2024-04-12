@@ -22,6 +22,7 @@ const getCategoryById = async (req, res) => {
 const createCategory = async (req, res) => {
 	try {
       const newCategory = req.body;
+	  newCategory.active = parseInt(req.body.active);
       const created = await categoryService.createCategory(newCategory);
       res.status(201).json(created);
     } catch (err) {
@@ -33,6 +34,7 @@ const updateCategory = async (req, res) => {
 	try {
 		const id = req.params.id;
       	const editCategory = req.body;
+		editCategory.active = parseInt(req.body.active);
       	const updated = await categoryService.updateCategory(editCategory, parseInt(id));
       	res.status(200).json(updated);
     } catch (err) {

@@ -22,6 +22,7 @@ const getSocialById = async (req, res) => {
 const createSocial = async (req, res) => {
 	try {
       const newSocial = req.body;
+      newSocial.active = parseInt(req.body.active);
       const createdSocial = await socialService.createSocial(newSocial);
       res.status(201).json(createdSocial);
     } catch (err) {
@@ -33,6 +34,7 @@ const updateSocial = async (req, res) => {
 	try {
 		const id = req.params.id;
       	const editSocial = req.body;
+		editSocial.active = parseInt(req.body.active);
       	const updatedSocial = await socialService.updateSocial(editSocial, parseInt(id));
       	res.status(200).json(updatedSocial);
     } catch (err) {

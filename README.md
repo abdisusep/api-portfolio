@@ -1,1 +1,1 @@
-Express + Prisma + PostgreSQL (Repository Pattern)
+Express + Prisma + PostgreSQL
